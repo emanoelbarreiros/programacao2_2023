@@ -1,20 +1,30 @@
 package br.upe.teste;
 
+import br.upe.animal.Simulacao;
 import br.upe.banco.Conta;
 
+import java.io.*;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Teste {
 
     public static void main(String[] args) {
-        double media1 = media(4,8);
-        System.out.println(media1);
-        double media2 = media(4,8, 10);
-        System.out.println(media2);
-        double media3 = media(4,8, 10, 12);
-        System.out.println(media3);
+        boolean naoDeuCerto = true;
+        Scanner scan = new Scanner(System.in);
+        int x = scan.nextInt();
+        int y = 0;
+        do {
+            try {
+                y = scan.nextInt();
+                int z = x / y;
+                System.out.println(z);
+                naoDeuCerto = false;
+            } catch(ArithmeticException e) {
+                System.out.println("Não pode dividir por zero. Informe outro numero.");
+            }
+        } while (naoDeuCerto);
 
-        System.out.printf("%f", media1);
     }
 
     public void printf(String formato, Object... params) {
@@ -28,6 +38,13 @@ public class Teste {
         }
 
         return soma / valores.length;
+    }
+
+    public static void explodir() {
+        int x = 10;
+        int y = 2;
+        int z = x / y;
+        throw new EnderecoObrigatorioException();
     }
 
 }
