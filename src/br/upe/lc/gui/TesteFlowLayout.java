@@ -11,14 +11,9 @@ public class TesteFlowLayout {
     private JCheckBox chkTeste;
 
     public TesteFlowLayout() {
-        btnOK.addActionListener(new BotaoActionListener("primeiro action listener"));
+        btnOK.addActionListener(e -> JOptionPane.showMessageDialog(null, "botao clicado" + e.getSource()));
         btnOK.addActionListener(new BotaoActionListener("segundo action listener"));
-        chkTeste.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Checkbox foi clicado");
-            }
-        });
+        chkTeste.addActionListener( e -> JOptionPane.showMessageDialog(null, "Checkbox foi clicado"));
         chkTeste.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {

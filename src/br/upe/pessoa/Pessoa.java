@@ -1,5 +1,7 @@
 package br.upe.pessoa;
 
+import java.util.Objects;
+
 public class Pessoa {
 
     private String nome;
@@ -10,6 +12,11 @@ public class Pessoa {
 
     public boolean equals(Object outro) {
         return this.nome.equals(((Pessoa) outro).getNome());
+    }
+
+    @Override
+    public int hashCode() {
+        return 20;
     }
 
     public String toString() {

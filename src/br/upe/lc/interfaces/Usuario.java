@@ -26,4 +26,8 @@ public class Usuario implements Comparable{
     public int compareTo(Object o) {
         return this.idade - ((Usuario) o).getIdade();
     }
+
+    public String toString() {
+        return String.valueOf(idade);
+    }
 }
